@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../theme/design_tokens.dart';
+import 'actividades_asignadas_screen.dart';
 
 class InicioItinerarioScreen extends StatefulWidget {
   const InicioItinerarioScreen({super.key});
@@ -467,30 +468,41 @@ class _InicioItinerarioScreenState extends State<InicioItinerarioScreen> {
   }
 
   Widget _buildClientCard(ClientData client) {
-    return Row(
-      children: [
-        Container(
-          width: 10,
-          height: 95,
-          decoration: BoxDecoration(
-            color: client.statusColor,
-            borderRadius: const BorderRadius.only(
-              topLeft: Radius.circular(10),
-              bottomLeft: Radius.circular(10),
+    return GestureDetector(
+      onTap: () {
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => ActividadesAsignadasScreen(
+              clientName: client.name,
+              clientCode: client.code,
             ),
           ),
-        ),
-        Expanded(
-          child: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+        );
+      },
+      child: Row(
+        children: [
+          Container(
+            width: 10,
+            height: 95,
             decoration: BoxDecoration(
-              color: Colors.white,
-              border: Border.all(color: const Color(0xFFE6E8F0)),
+              color: client.statusColor,
               borderRadius: const BorderRadius.only(
-                topRight: Radius.circular(10),
-                bottomRight: Radius.circular(10),
+                topLeft: Radius.circular(10),
+                bottomLeft: Radius.circular(10),
               ),
             ),
+          ),
+          Expanded(
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                border: Border.all(color: const Color(0xFFE6E8F0)),
+                borderRadius: const BorderRadius.only(
+                  topRight: Radius.circular(10),
+                  bottomRight: Radius.circular(10),
+                ),
+              ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

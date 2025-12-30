@@ -9,6 +9,7 @@ class DesignTokens {
 
   // Secondary Colors
   static const Color secondaryColor100 = Color(0xFF51BFE7);
+  static const Color secondaryColorDark = Color(0xFF3C8FB2);
   static const Color secondaryColor10 = Color(0xFFEFF8FC);
 
   // Neutral Colors
@@ -26,6 +27,7 @@ class DesignTokens {
   static const Color infoColor = Color(0xFF5E7FCD);
   static const Color infoColor10 = Color(0xFFF0F2FA);
   static const Color successColor = Color(0xFF06A77D);
+  static const Color successColor25 = Color(0xFFC8E7DE);
   static const Color warningColor75 = Color(0xFFFBE07D);
   static const Color errorColor25 = Color(0xFFF9CDBF);
 
