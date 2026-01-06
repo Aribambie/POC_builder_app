@@ -1,0 +1,22 @@
+﻿REGLAS NO NEGOCIABLES (POC):
+- NO usar assets (imágenes), NO SVG, NO fuentes personalizadas. Solo Material Icons y widgets nativos.
+- NO agregar dependencias nuevas en pubspec.yaml (prohibido intl, charts externos, svg packages, etc.).
+- NO incluir BottomNavigationBar/BottomAppBar dentro de pantallas generadas. La navegación vive fuera (shell/host), las pantallas solo definen el body/Scaffold si aplica.
+- NO hardcodear fechas, montos o IDs de negocio: usar parámetros (DateTime/num/String) o placeholders claramente marcados.
+- Mantener imports mínimos y evitar código muerto/redundante.
+
+ESTÁNDARES DE CÓDIGO / REUSO:
+- Si un valor se repite 2+ veces (padding, radius, tamaños), extraer a constantes/tokens locales o reutilizar Theme.
+- Extraer componentes reutilizables cuando existan patrones (cards, list tiles, headers, chips, sections).
+- Preferir widgets pequeños y composables; evitar métodos build gigantes.
+
+ORGANIZACIÓN DE ARCHIVOS:
+- Pantallas en lib/screens/<nombre>_screen.dart
+- Componentes reutilizables en lib/widgets/<componente>.dart
+- Tokens/tema en lib/theme/
+- Nombres en lower_snake_case y clases en PascalCase.
+
+CALIDAD VISUAL / LAYOUT:
+- Mantener fidelidad visual: alineaciones, paddings, radios, jerarquía tipográfica y spacing consistentes.
+- Usar constraints y layouts responsivos (Expanded/Flexible) evitando tamaños fijos innecesarios.
+
